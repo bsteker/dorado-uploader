@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dataType1">
+      <PropertyDef name="propertyDef1"/>
+    </DataType>
+  </Model>
+  <View>
+    <Button id="button1">
+      <ClientEvent name="onClick" signature="d1,uploadAction1">
+d1.show({
+	anchorTarget:window,
+	align:&quot;innerright&quot;,
+	vAlign:&quot;innerbottom&quot;,
+	offsetLeft: -50,
+	offsetTop: -50
+});</ClientEvent>
+      <Property name="caption">open</Property>
+    </Button>
+    <Button id="button2">
+      <ClientEvent name="onClick" signature="d1,uploadAction1">uploadAction1.set(&quot;filters&quot;,[{
+	title:&quot;文档&quot;,
+	extensions:&quot;mp3&quot;
+}]);
+d1.show();</ClientEvent>
+      <Property name="caption">open</Property>
+    </Button>
+    <Dialog id="d1">
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Buttons>
+        <Button id="button3">
+          <Property name="action">uploadAction1</Property>
+        </Button>
+      </Buttons>
+      <Children/>
+      <Tools/>
+    </Dialog>
+    <UploadAction id="uploadAction1">
+      <Property name="caption">test</Property>
+      <Filters/>
+    </UploadAction>
+    <Container layout="anchor">
+      <Button>
+        <ClientEvent name="onClick">//throw new dorado.Exception(&quot;test&quot;);
+view.id(&quot;uploadAction1&quot;).execute();
+</ClientEvent>
+        <Property name="caption">test</Property>
+      </Button>
+      <Button layoutConstraint="anchorLeft:none;left:0;top:0">
+        <Property name="caption">aaa</Property>
+        <Property name="action">uploadAction1</Property>
+      </Button>
+    </Container>
+  </View>
+</ViewConfig>

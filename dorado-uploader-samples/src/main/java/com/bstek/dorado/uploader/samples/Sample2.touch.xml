@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <UploadAction id="uploadAction1">
+      <Filters/>
+    </UploadAction>
+    <TouchButton>
+      <Property name="action">uploadAction1</Property>
+      <Property name="caption">test</Property>
+    </TouchButton>
+  </View>
+</ViewConfig>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<Packages>
+		<Package name="uploader" pattern="dorado-js" depends="base-widget">
+			classpath:dorado/scripts/uploader-common,
+			classpath:dorado/scripts/plupload,
+			classpath:dorado/scripts/plupload.html4,
+			classpath:dorado/scripts/plupload.html5,
+			classpath:dorado/scripts/plupload.flash,
+			classpath:dorado/scripts/plupload.silverlight,
+			classpath:dorado/scripts/plupload.gears,
+			classpath:dorado/scripts/plupload.browserplus,
+			classpath:dorado/scripts/uploader,
+			resources/i18n/uploader
+		</Package>
+	</Packages>
+</config>
+	
