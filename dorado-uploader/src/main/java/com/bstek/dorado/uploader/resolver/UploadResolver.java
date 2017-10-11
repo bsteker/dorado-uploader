@@ -99,7 +99,12 @@ public class UploadResolver extends AbstractResolver  {
 //				jsonBuilder.object(); 
 //				jsonBuilder.key("data").value(retObj);
 //				jsonBuilder.endObject();
-				res.setContentType(MediaType.APPLICATION_JSON_VALUE);
+				String agent=req.getHeader("User-Agent").toLowerCase();
+				if(agent.indexOf("msie 8")>0 || agent.indexOf("msie 9")>0){
+					res.setContentType(MediaType.TEXT_HTML_VALUE);
+				}else{
+					res.setContentType(MediaType.APPLICATION_JSON_VALUE);
+				}
 				JsonGenerator jsonGenerator = this.objectMapper.getFactory()
 						.createGenerator(res.getOutputStream(), getJsonEncoding(res.getContentType()));
 				this.objectMapper.writeValue(jsonGenerator, retObj);
